@@ -1,6 +1,7 @@
 package OSNOVNYE_ZADANYA;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.nio.file.Files;
 import java.io.PrintStream;
 import java.nio.file.Path;
@@ -11,10 +12,8 @@ public class IOTasks {
     public static void main(String[] args) throws Exception {
         Scanner pin = new Scanner(System.in);
         String name = pin.next();
-        String nametwo = pin.next();
         File a = new File("src\\OSNOVNYE_ZADANYA\\"+name);
-        File b = new File("src\\OSNOVNYE_ZADANYA\\"+nametwo);
-        FixItFelix(a,b);
+        FastReader(a);
         pin.close();
     }
 
@@ -87,5 +86,27 @@ public class IOTasks {
         ps1.close();
         in.close();
 
+    }
+
+    public static void FastReader(File a) throws InterruptedException, Exception {
+        Scanner in = new Scanner(a, "utf-8");
+        String w = in.next();
+        int time = 500;
+        while (in.hasNext()) {
+            if (w.endsWith(",")||w.endsWith(".")||w.endsWith("!")||w.endsWith("?")||w.endsWith(":")) {
+                System.out.print(w.substring(0,w.length()-1)+'\r');
+                Thread.sleep(time);
+                System.out.flush();
+                w = w.substring(w.length()-1);
+                time = 1000;
+            }
+            System.out.print(w+'\r');
+            Thread.sleep(time);
+            System.out.flush();
+            time = 500;
+            w = in.next();
+        }
+        System.out.print(w+'\r');
+        in.close();
     }
 }
