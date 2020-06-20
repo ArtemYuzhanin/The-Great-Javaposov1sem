@@ -17,5 +17,14 @@ public class PrestoTesto {
         System.out.println(t2.translateOneSymbol('@'));
         System.out.println(t2.translate("1234567890"));
         System.out.println(t2.translate("мой возраст"));
+
+        System.out.println(t.translateOneSymbol('Р')); // R
+        System.out.println(t.translateOneSymbol('Я')); // Ia
+        System.out.println(t.translateOneSymbol('Ь'));
+        System.out.println(t.translate("Моё имя")); // Ilia
+        System.out.println(t.translate("Яблоко")); // Iabloko
+        System.out.println(t.translate("ПАРАШЮТ"));
+
+
     }
 }
