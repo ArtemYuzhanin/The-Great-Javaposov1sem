@@ -9,5 +9,13 @@ public class PrestoTesto {
         System.out.println(t.translateOneSymbol('$'));
         System.out.println(t.translate("экзамен"));
         System.out.println(t.translate("моё имя"));
+
+        char[] nums = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+        String[] texts = new String[]{"ноль", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять"};
+        Transliterator t2 = new Transliterator(nums, texts);
+        System.out.println(t2.translateOneSymbol('9'));
+        System.out.println(t2.translateOneSymbol('@'));
+        System.out.println(t2.translate("1234567890"));
+        System.out.println(t2.translate("мой возраст"));
     }
 }
