@@ -10,6 +10,10 @@ public class Transliterator {
         this.end = end;
     }
 
+    public static Transliterator createICAO_DOC_9303() {
+        return new Transliterator(new char[]{'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'},new String[]{"a", "b", "v", "g", "d", "e", "e", "zh", "z", "i", "i", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u", "f", "kh", "ts", "ch", "sh", "shch", "ie", "y", "", "e", "iu", "ia"});
+    }
+
     public String translateOneSymbol(char s) {
         int k = 0;
         int i = 0;

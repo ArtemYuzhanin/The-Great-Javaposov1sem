@@ -25,6 +25,10 @@ public class PrestoTesto {
         System.out.println(t.translate("Яблоко")); // Iabloko
         System.out.println(t.translate("ПАРАШЮТ"));
 
-
+        Transliterator t3 = Transliterator.createICAO_DOC_9303();
+        System.out.println(t3.translateOneSymbol('я'));
+        System.out.println(t3.translateOneSymbol('$'));
+        System.out.println(t3.translate("экзамен"));
+        System.out.println(t3.translate("моё имя"));
     }
 }
