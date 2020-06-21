@@ -1,4 +1,10 @@
-package GrandeUltimoZachetto;
+package GrandeUltimoZachetto.exam;
+
+import java.io.File;
+import java.io.PrintStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Transliterator {
     private char[] origin;
@@ -8,6 +14,16 @@ public class Transliterator {
     public Transliterator(char[] origin, String[] end) {
         this.origin = origin;
         this.end = end;
+    }
+
+    public void translateFile(String name1, String name2) throws Exception {
+        Path p = Paths.get("src\\"+name1);
+        File b = new File("src\\"+name2);
+        String text = Files.readString(p);
+        PrintStream ps1 = new PrintStream(b, "utf8");
+        ps1.print(translate(text));
+        ps1.close();
+
     }
 
     public static Transliterator createICAO_DOC_9303() {
